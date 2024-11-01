@@ -28,7 +28,7 @@ export const SuccessModal = ({show, onClose, initial}) => {
         <AnimatePresence>
             {show && (
                 <motion.div
-                    className="modal-wrapper-s"
+                    className="modal-wrapper"
                     onClick={handleOverlayClick}
                     initial={{opacity: initial}}
                     animate={{opacity: 1}}
@@ -36,17 +36,14 @@ export const SuccessModal = ({show, onClose, initial}) => {
                     transition={{duration: 0.4}}
                 >
                     <div
-                        className="modal-s"
+                        className="modal"
                         onClick={handleModalClick}
                     >
-                        <div className="title regular_h3">
-                            Заявка<br/>
-                            отправлена
+                        <div className="title regular_24">
+                            Бриф отправлен
                         </div>
-                        <div className="footer" onClick={onClose}>
-                            <div className="button regular_h4">
-                                Закрыть
-                            </div>
+                        <div className="button regular_24" onClick={onClose}>
+                            Закрыть
                         </div>
                     </div>
                 </motion.div>

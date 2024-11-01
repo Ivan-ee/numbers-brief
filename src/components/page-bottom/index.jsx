@@ -58,7 +58,7 @@ export function PageBottom({collectData}) {
             <SuccessModal show={isSuccessModalVisible} onClose={handleCloseSuccessModal} initial={0}/>
             <div className="page-bottom">
                 <div className="btn regular_24" onClick={handleButtonClick}>
-                    {isLoading ? <ReactLoading type={'bars'} color="#fff" height={20} width={20}/> : 'Отправить бриф'}
+                    {isLoading ? <ReactLoading type={'bars'} color="#fff" height={24} width={24}/> : 'Отправить бриф'}
                 </div>
             </div>
             <BottomInfo/>
