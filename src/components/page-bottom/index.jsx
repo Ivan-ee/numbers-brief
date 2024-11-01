@@ -40,7 +40,7 @@ export function PageBottom({collectData}) {
         setIsLoading(true);
 
         try {
-            await emailjs.send('service_iw3o8gm', 'template_32zdmmp', templateParams, 'apAJK37Ied8XxixOG');
+            await emailjs.send('service_0a9evak', 'template_qp27qri', templateParams, 'A3dxX0TOi0q78OL62');
             setSuccessModalVisible(true); // Показываем модальное окно
         } catch (error) {
             console.error('Не удалось отправить письмо:', error);
