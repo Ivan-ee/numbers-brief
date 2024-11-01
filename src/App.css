@@ -177,7 +177,7 @@ body {
                         border-radius: 16px;
                         background-color: var(--color-gray-1);
 
-                        transition: all .3s ease-in-out;
+                        transition: background-color .3s ease-in-out;
 
                         .radiobutton-input {
                             box-sizing: border-box;
@@ -192,7 +192,7 @@ body {
                             appearance: none;
                             position: relative;
 
-                            transition: background-color .3s ease-in-out;
+                            transition: background-color .1s ease-in-out;
                         }
 
                         .radiobutton-input:checked {
