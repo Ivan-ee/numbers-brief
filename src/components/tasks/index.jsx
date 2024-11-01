@@ -1,13 +1,32 @@
 import {RadioButton} from "../radio-button/index.jsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Textarea} from "../textarea/index.jsx";
 import {Title} from "../custom-title/index.jsx";
 
-export function Tasks() {
+export function Tasks({onDataChange}) {
     const [selectedValue1, setSelectedValue1] = useState('');
     const [selectedValue2, setSelectedValue2] = useState('');
     const [selectedValue3, setSelectedValue3] = useState('');
     const [selectedValue4, setSelectedValue4] = useState('');
+
+    const [textareaValue1, setTextareaValue1] = useState('');
+    const [textareaValue2, setTextareaValue2] = useState('');
+    const [textareaValue3, setTextareaValue3] = useState('');
+    const [textareaValue4, setTextareaValue4] = useState('');
+
+    useEffect(() => {
+        onDataChange({
+            selectedValue1,
+            selectedValue2,
+            selectedValue3,
+            selectedValue4,
+            textareaValue1,
+            textareaValue2,
+            textareaValue3,
+            textareaValue4,
+        });
+    }, [selectedValue1, selectedValue2, selectedValue3, selectedValue4, textareaValue1, textareaValue2, textareaValue3, textareaValue4, onDataChange]);
+
 
     return (
         <div className="item tasks">
@@ -55,7 +74,10 @@ export function Tasks() {
                             />
                         </div>
                         <div className="textarea">
-                            <Textarea name={'tasks_textarea_1'}/>
+                            <Textarea
+                                value={textareaValue1}
+                                onChange={(e) => setTextareaValue1(e.target.value)}
+                                name={'tasks_textarea_1'}/>
                         </div>
                     </div>
                 </div>
@@ -91,7 +113,10 @@ export function Tasks() {
                             />
                         </div>
                         <div className="textarea">
-                            <Textarea name={'tasks_textarea_2'}/>
+                            <Textarea
+                                value={textareaValue2}
+                                onChange={(e) => setTextareaValue2(e.target.value)}
+                                name={'tasks_textarea_2'}/>
                         </div>
 
                     </div>
@@ -129,7 +154,10 @@ export function Tasks() {
                             />
                         </div>
                         <div className="textarea">
-                            <Textarea name={'tasks_textarea_3'}/>
+                            <Textarea
+                                value={textareaValue3}
+                                onChange={(e) => setTextareaValue3(e.target.value)}
+                                name={'tasks_textarea_3'}/>
                         </div>
 
                     </div>
@@ -166,7 +194,10 @@ export function Tasks() {
                             />
                         </div>
                         <div className="textarea">
-                            <Textarea name={'tasks_textarea_4'}/>
+                            <Textarea
+                                value={textareaValue4}
+                                onChange={(e) => setTextareaValue4(e.target.value)}
+                                name={'tasks_textarea_4'}/>
                         </div>
                     </div>
                 </div>

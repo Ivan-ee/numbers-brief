@@ -1,10 +1,22 @@
 import {RadioButton} from "../radio-button/index.jsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Textarea} from "../textarea/index.jsx";
 
-export function Company() {
+export function Company({ onDataChange }) {
     const [selectedValue1, setSelectedValue1] = useState('');
     const [selectedValue2, setSelectedValue2] = useState('');
+    const [textareaValue1, setTextareaValue1] = useState('');
+    const [textareaValue2, setTextareaValue2] = useState('');
+
+    useEffect(() => {
+        onDataChange({
+            selectedValue1,
+            selectedValue2,
+            textareaValue1,
+            textareaValue2,
+        });
+    }, [selectedValue1, selectedValue2, textareaValue1, textareaValue2, onDataChange]);
+
 
     return (
         <div className="item company">
@@ -21,30 +33,33 @@ export function Company() {
                             <RadioButton
                                 id={'C_My_1'}
                                 name="company_radio_1"
-                                value="2"
+                                value="Свой ответ"
                                 text="Свой ответ"
-                                checked={selectedValue1 === '2'}
+                                checked={selectedValue1 === 'Свой ответ'}
                                 onChange={(e) => setSelectedValue1(e.target.value)}
                             />
                             <RadioButton
                                 id={'C_Yes_1'}
                                 name="company_radio_1"
-                                value="1"
+                                value="Да"
                                 text="Да"
-                                checked={selectedValue1 === '1'}
+                                checked={selectedValue1 === 'Да'}
                                 onChange={(e) => setSelectedValue1(e.target.value)}
                             />
                             <RadioButton
                                 id={'C_No_1'}
                                 name="company_radio_1"
-                                value="0"
+                                value="Нет"
                                 text="Нет"
-                                checked={selectedValue1 === '0'}
+                                checked={selectedValue1 === 'Нет'}
                                 onChange={(e) => setSelectedValue1(e.target.value)}
                             />
                         </div>
                         <div className="textarea">
-                            <Textarea name={'company_textarea_1'}/>
+                            <Textarea
+                                value={textareaValue1}
+                                onChange={(e) => setTextareaValue1(e.target.value)}
+                                name={'company_textarea_1'}/>
                         </div>
                     </div>
                 </div>
@@ -80,7 +95,10 @@ export function Company() {
                             />
                         </div>
                         <div className="textarea">
-                            <Textarea name={'company_textarea_1'}/>
+                            <Textarea
+                                value={textareaValue2}
+                                onChange={(e) => setTextareaValue2(e.target.value)}
+                                name={'company_textarea_1'}/>
                             <div className="textarea-desc regular_18">
                                 Можете оставить ссылки на сайты
                             </div>

@@ -1,7 +1,15 @@
 import {Title} from "../custom-title/index.jsx";
 import {Input} from "../custom-input/index.jsx";
+import {useEffect, useState} from "react";
 
-export function Cooperation() {
+export function Cooperation({onDataChange}) {
+
+    const [inputValue, setInputValue] = useState('');
+
+    useEffect(() => {
+        onDataChange({ inputValue });
+    }, [inputValue, onDataChange]);
+
 
     return (
         <div className="item tasks">
@@ -22,7 +30,7 @@ export function Cooperation() {
                         Желаемая дата завершения
                     </div>
                     <div className="block-inputs">
-                        <Input name={'C_input_1'}/>
+                        <Input value={inputValue} onChange={(e) => setInputValue(e.target.value)} name={'C_input_1'}/>
                     </div>
                 </div>
             </div>
