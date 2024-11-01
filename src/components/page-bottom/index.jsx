@@ -1,8 +1,14 @@
 import {BottomInfo} from "../bottom-info/index.jsx";
 import emailjs from 'emailjs-com';
+import {SuccessModal} from "../Success.jsx";
+import ReactLoading from "react-loading";
+import {useState} from "react";
 
 export function PageBottom({collectData}) {
-    const handleButtonClick = () => {
+    const [isLoading, setIsLoading] = useState(false);
+    const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
+
+    const handleButtonClick = async () => {
         const data = collectData();
         const emailTemplate = `
             Бриф от клиента
@@ -31,19 +37,29 @@ export function PageBottom({collectData}) {
             message: emailTemplate
         };
 
-        emailjs.send('service_iw3o8gm', 'template_32zdmmp', templateParams, 'apAJK37Ied8XxixOG')
-            .then((response) => {
-                console.log('Письмо успешно отправлено!', response.status, response.text);
-            })
-            .catch((error) => {
-                console.error('Не удалось отправить письмо:', error);
-            });
+        setIsLoading(true);
+
+        try {
+            await emailjs.send('service_iw3o8gm', 'template_32zdmmp', templateParams, 'apAJK37Ied8XxixOG');
+            setSuccessModalVisible(true); // Показываем модальное окно
+        } catch (error) {
+            console.error('Не удалось отправить письмо:', error);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const handleCloseSuccessModal = () => {
+        setSuccessModalVisible(false);
     };
 
     return (
         <>
+            <SuccessModal show={isSuccessModalVisible} onClose={handleCloseSuccessModal} initial={0}/>
             <div className="page-bottom">
-                <div className="btn regular_24" onClick={handleButtonClick}>Отправить бриф</div>
+                <div className="btn regular_24" onClick={handleButtonClick}>
+                    {isLoading ? <ReactLoading type={'bars'} color="#fff" height={20} width={20}/> : 'Отправить бриф'}
+                </div>
             </div>
             <BottomInfo/>
         </>
