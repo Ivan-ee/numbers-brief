@@ -51,25 +51,25 @@ export function Tasks({onDataChange}) {
                             <RadioButton
                                 id={'T_My_1'}
                                 name="tasks_radio_1"
-                                value="2"
+                                value="Свой ответ"
                                 text="Свой ответ"
-                                checked={selectedValue1 === '2'}
+                                checked={selectedValue1 === 'Свой ответ'}
                                 onChange={(e) => setSelectedValue1(e.target.value)}
                             />
                             <RadioButton
                                 id={'T_Yes_1'}
                                 name="tasks_radio_1"
-                                value="1"
+                                value="Да"
                                 text="Да"
-                                checked={selectedValue1 === '1'}
+                                checked={selectedValue1 === 'Да'}
                                 onChange={(e) => setSelectedValue1(e.target.value)}
                             />
                             <RadioButton
                                 id={'T_No_1'}
                                 name="tasks_radio_1"
-                                value="0"
+                                value="Нет"
                                 text="Нет"
-                                checked={selectedValue1 === '0'}
+                                checked={selectedValue1 === 'Нет'}
                                 onChange={(e) => setSelectedValue1(e.target.value)}
                             />
                         </div>
@@ -90,25 +90,25 @@ export function Tasks({onDataChange}) {
                             <RadioButton
                                 id={'T_My_2'}
                                 name="tasks_radio_2"
-                                value="2"
+                                value="Свой ответ"
                                 text="Свой ответ"
-                                checked={selectedValue2 === '2'}
+                                checked={selectedValue2 === 'Свой ответ'}
                                 onChange={(e) => setSelectedValue2(e.target.value)}
                             />
                             <RadioButton
                                 id={'T_Yes_2'}
                                 name="tasks_radio_2"
-                                value="1"
+                                value="Да"
                                 text="Да"
-                                checked={selectedValue2 === '1'}
+                                checked={selectedValue2 === 'Да'}
                                 onChange={(e) => setSelectedValue2(e.target.value)}
                             />
                             <RadioButton
                                 id={'T_No_2'}
                                 name="tasks_radio_2"
-                                value="0"
+                                value="Нет"
                                 text="Нет"
-                                checked={selectedValue2 === '0'}
+                                checked={selectedValue2 === 'Нет'}
                                 onChange={(e) => setSelectedValue2(e.target.value)}
                             />
                         </div>
@@ -131,25 +131,25 @@ export function Tasks({onDataChange}) {
                             <RadioButton
                                 id={'C_My_3'}
                                 name="tasks_radio_3"
-                                value="2"
+                                value="Свой ответ"
                                 text="Свой ответ"
-                                checked={selectedValue3 === '2'}
+                                checked={selectedValue3 === 'Свой ответ'}
                                 onChange={(e) => setSelectedValue3(e.target.value)}
                             />
                             <RadioButton
                                 id={'C_Yes_3'}
                                 name="tasks_radio_3"
-                                value="1"
+                                value="Да"
                                 text="Да"
-                                checked={selectedValue3 === '1'}
+                                checked={selectedValue3 === 'Да'}
                                 onChange={(e) => setSelectedValue3(e.target.value)}
                             />
                             <RadioButton
                                 id={'C_No_3'}
                                 name="tasks_radio_3"
-                                value="0"
+                                value="Нет"
                                 text="Нет"
-                                checked={selectedValue3 === '0'}
+                                checked={selectedValue3 === 'Нет'}
                                 onChange={(e) => setSelectedValue3(e.target.value)}
                             />
                         </div>
@@ -171,25 +171,25 @@ export function Tasks({onDataChange}) {
                             <RadioButton
                                 id={'T_My_4'}
                                 name="tasks_radio_4"
-                                value="2"
+                                value="Свой ответ"
                                 text="Свой ответ"
-                                checked={selectedValue4 === '2'}
+                                checked={selectedValue4 === 'Свой ответ'}
                                 onChange={(e) => setSelectedValue4(e.target.value)}
                             />
                             <RadioButton
                                 id={'T_Yes_4'}
                                 name="tasks_radio_4"
-                                value="1"
+                                value="Да"
                                 text="Да"
-                                checked={selectedValue4 === '1'}
+                                checked={selectedValue4 === 'Да'}
                                 onChange={(e) => setSelectedValue4(e.target.value)}
                             />
                             <RadioButton
                                 id={'T_No_4'}
                                 name="tasks_radio_4"
-                                value="0"
+                                value="Нет"
                                 text="Нет"
-                                checked={selectedValue4 === '0'}
+                                checked={selectedValue4 === 'Нет'}
                                 onChange={(e) => setSelectedValue4(e.target.value)}
                             />
                         </div>

@@ -72,25 +72,25 @@ export function Company({ onDataChange }) {
                             <RadioButton
                                 id={'C_My_2'}
                                 name="company_radio_2"
-                                value="2"
+                                value="Свой ответ"
                                 text="Свой ответ"
-                                checked={selectedValue2 === '2'}
+                                checked={selectedValue2 === 'Свой ответ'}
                                 onChange={(e) => setSelectedValue2(e.target.value)}
                             />
                             <RadioButton
                                 id={'C_Yes_2'}
                                 name="company_radio_2"
-                                value="1"
+                                value="Да"
                                 text="Да"
-                                checked={selectedValue2 === '1'}
+                                checked={selectedValue2 === 'Да'}
                                 onChange={(e) => setSelectedValue2(e.target.value)}
                             />
                             <RadioButton
                                 id={'C_No_2'}
                                 name="company_radio_2"
-                                value="0"
+                                value="Нет"
                                 text="Нет"
-                                checked={selectedValue2 === '0'}
+                                checked={selectedValue2 === 'Нет'}
                                 onChange={(e) => setSelectedValue2(e.target.value)}
                             />
                         </div>
