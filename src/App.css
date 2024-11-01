@@ -17,6 +17,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 64px;
+
+    .bottom-info{
+        display: none;
+    }
 }
 
 .page-top {
@@ -302,5 +306,105 @@ body {
                 }
             }
         }
+    }
+}
+
+@media (max-width: 1199px) {
+
+    .bottom-info{
+        display: none;
+    }
+
+    .page-container{
+        max-width: none;
+        margin: 80px;
+        padding: 64px 68px;
+        width: auto;
+
+        gap: 48px;
+
+        .bottom-info{
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+    }
+
+
+
+    .regular_24{
+        font-size: 18px;
+    }
+
+    .item{
+        flex-direction: column;
+        gap: 16px;
+
+        .block-title{
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+        }
+
+        .block-content{
+            flex-direction: column;
+            gap: 48px;
+
+            .block-item{
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                .block-inputs{
+                    gap: 8px;
+                    .radio{
+                        gap: 8px;
+                        flex-direction: column;
+                    }
+
+                    .textarea{
+                        .custom-textarea{
+                            width: 100%;
+                        }
+                    }
+
+                    .task-title, .custom-input{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .page-bottom{
+        margin-top: 0;
+        padding-top: 48px;
+
+        border-top: 2px solid var(--color-gray-1);
+        border-radius: 2px;
+
+        .btn{
+            text-align: center;
+            width: 100%;
+            padding: 18px 0;
+        }
+    }
+}
+
+@media (max-width: 960px) {
+    .page-container{
+        margin: 32px;
+        padding: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-container{
+        border-radius: 0;
+        margin: 0;
+        padding: 32px;
+    }
+
+    .regular_36{
+        font-size: 24px;
     }
 }
